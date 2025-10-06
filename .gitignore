@@ -1,4 +1,5 @@
-.terraform
-.tfstate
-.tfstate.backup
-crash.log
+# Ignore Terraform binaries and state
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
