@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   terraform:
-    runs-on: ubuntu-ladev
+    runs-on: ubuntu-latest
 
     env:
       ARM_CLIENT_ID: ${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}
