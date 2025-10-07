@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: "Environment to deploy (dev/prod)"
+        description: "Environment to deploy (test/prod)"
         required: true
-        default: "dev"
+        default: "test"
 
 permissions:
   id-token: write
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   terraform:
-    runs-on: ubuntu-ladev
+    runs-on: ubuntu-latest
 
     env:
       ARM_CLIENT_ID: ${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}
@@ -58,8 +58,8 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -var-file="environments/${{ github.event.inputs.environment }}/terraform.tfvars" -out=tfplan
 
-      - name: Terraform Apply (dev)
-        if: github.event.inputs.environment == 'dev'
+      - name: Terraform Apply (test)
+        if: github.event.inputs.environment == 'test'
         run: terraform apply -auto-approve tfplan
 
       - name: Terraform Apply (prod with manual approval)
