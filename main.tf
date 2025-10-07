@@ -156,7 +156,7 @@ resource "azurerm_windows_virtual_machine" "htw_vm" {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
     sku       = "2022-datacenter-azure-edition"
-    version   = "ladev"
+    version   = "latest"
   }
 
   tags = {
