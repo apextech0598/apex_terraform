@@ -23,9 +23,9 @@ variable "vm_names" {
 # ----------------------------
 # Resource Group
 # ----------------------------
-resource "azurerm_resource_group" "apex_RG" {
-  name     = "apex_RG01"
-  location = "West Europe"
+resource "azurerm_resource_group" "rg" {
+  name     = var.resource_group_name
+  location = var.location
 
   tags = {
     environment = "dev"
