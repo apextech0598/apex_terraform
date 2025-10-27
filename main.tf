@@ -23,7 +23,7 @@ variable "vm_names" {
 # ----------------------------
 # Resource Group
 # ----------------------------
-resource "azurerm_resource_group" "RG" {
+resource "azurerm_resource_group" "apex_RG" {
   name     = var.resource_group_name
   location = var.location
 
