@@ -1,3 +1,3 @@
-vm_names      = ["htw-srv01", "htw-srv02"]
+vm_names      = ["apex-srv01", "apex-srv02"]
 location      = "West Europe"
-admin_password = "DevP@ssword123"
+admin_password = "DevP@ssword123
