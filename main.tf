@@ -28,7 +28,7 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 
   tags = {
-    environment = "dev"
+    environment = var.environment
     project     = "apex"
   }
 }
@@ -43,7 +43,7 @@ resource "azurerm_virtual_network" "apex_vnet" {
   address_space       = ["10.0.0.0/16"]
 
   tags = {
-    environment = "dev"
+    environment = var.environment
     project     = "apex"
   }
 }
@@ -67,7 +67,7 @@ resource "azurerm_network_security_group" "apex_nsg" {
   resource_group_name = azurerm_resource_group.apex_RG.name
 
   tags = {
-    environment = "dev"
+    environment = var.environment
     project     = "apex"
   }
 }
@@ -106,7 +106,7 @@ resource "azurerm_public_ip" "apex_ip" {
   zones               = ["1"]
 
   tags = {
-    environment = "dev"
+    environment = var.environment
     project     = "apex"
   }
 }
@@ -128,7 +128,7 @@ resource "azurerm_network_interface" "apex_nic" {
   }
 
   tags = {
-    environment = "dev"
+    environment = var.environment
     project     = "apex"
   }
 }
@@ -160,7 +160,7 @@ resource "azurerm_windows_virtual_machine" "apex_vm" {
   }
 
   tags = {
-    environment = "dev"
+    environment = var.environment
     project     = "apex"
   }
 }
