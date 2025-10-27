@@ -23,7 +23,7 @@ variable "vm_names" {
 # ----------------------------
 # Resource Group
 # ----------------------------
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "RG" {
   name     = var.resource_group_name
   location = var.location
 
